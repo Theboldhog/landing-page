@@ -1,10 +1,12 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const rateLimit = require('express-rate-limit');
 const compression = require('compression');
 
 const app = express();
+app.disable('x-powered-by');
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'registrations.json');
 
@@ -136,14 +138,19 @@ app.post('/register', registerLimiter, (req, res) => {
   registrations.push(entry);
   saveRegistrations(registrations);
 
-  console.log(`New registration: ${entry.name} <${entry.email}>`);
+  const maskedEmail = entry.email.replace(/(?<=.{2}).(?=.*@)/g, '*');
+  console.log(`New registration: [name redacted] <${maskedEmail}>`);
   res.status(201).json({ success: true, message: 'Registration successful!' });
 });
 
 // GET /admin/registrations — protected by token
 app.get('/admin/registrations', (req, res) => {
   const token = req.headers['x-admin-token'];
-  if (!token || token !== ADMIN_TOKEN) {
+  const validToken = Buffer.from(ADMIN_TOKEN);
+  const providedToken = Buffer.from(typeof token === 'string' ? token : '');
+  const tokenMatch = providedToken.length === validToken.length &&
+    crypto.timingSafeEqual(providedToken, validToken);
+  if (!tokenMatch) {
     return res.status(401).json({ error: 'Non autorisé.' });
   }
   const registrations = loadRegistrations();
