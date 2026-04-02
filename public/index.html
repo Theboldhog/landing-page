@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,7 @@
   <meta name="twitter:title" content="Scanner de vulnérabilités web — Bientôt disponible" />
   <meta name="twitter:description" content="Détection automatisée de failles web — OWASP Top 10, CVE, pentest automatisé. Accès anticipé." />
 
-  <!-- Schema.org structured data -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,16 +41,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-dot"></span>
+        ABLL Scanner
+      </a>
+      <span class="header-badge">Bientôt disponible</span>
+    </div>
+  </header>
+
+  <main>
     <div class="hero">
-      <div class="badge">Bientôt disponible</div>
-      <h1>Scannez vos vulnérabilités<br/>avant que les autres le fassent.</h1>
+      <h1>Scannez vos vulnérabilités<br/><span>avant que les autres</span><br/>le fassent.</h1>
       <p class="subtitle">
         Détection automatisée de failles web — injections SQL, XSS, CSRF, SSRF,
         mauvaises configurations CORS, headers manquants et bien plus encore.
         Rejoignez la liste d'accès anticipé et sécurisez vos applications dès le lancement.
       </p>
-
       <ul class="features">
         <li><span class="dot"></span>Scan OWASP Top 10</li>
         <li><span class="dot"></span>Détection CVE en temps réel</li>
@@ -92,6 +101,10 @@
       </form>
     </div>
   </main>
+
+  <footer>
+    © 2025 ABLL Scanner — Tous droits réservés
+  </footer>
 
   <script src="main.js"></script>
 </body>
