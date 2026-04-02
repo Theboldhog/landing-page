@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scanner de vulnérabilités web — Bientôt disponible</title>
+  <meta name="description" content="Détectez automatiquement les failles de vos applications web : injections SQL, XSS, CSRF, SSRF, mauvaises configurations CORS et bien plus. Accès anticipé disponible." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tondomaine.fr/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tondomaine.fr/" />
+  <meta property="og:title" content="Scanner de vulnérabilités web — Bientôt disponible" />
+  <meta property="og:description" content="Détectez automatiquement les failles de vos applications web : injections SQL, XSS, CSRF, SSRF et plus encore. Rejoignez la liste d'accès anticipé." />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Scanner de vulnérabilités web — Bientôt disponible" />
+  <meta name="twitter:description" content="Détection automatisée de failles web — OWASP Top 10, CVE, pentest automatisé. Accès anticipé." />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Scanner de vulnérabilités web",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "description": "Outil de scan automatisé de vulnérabilités web : injections SQL, XSS, CSRF, SSRF, analyse des headers HTTP et TLS, détection CVE.",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="hero">
+      <div class="badge">Bientôt disponible</div>
+      <h1>Scannez vos vulnérabilités<br/>avant que les autres le fassent.</h1>
+      <p class="subtitle">
+        Détection automatisée de failles web — injections SQL, XSS, CSRF, SSRF,
+        mauvaises configurations CORS, headers manquants et bien plus encore.
+        Rejoignez la liste d'accès anticipé et sécurisez vos applications dès le lancement.
+      </p>
+
+      <ul class="features">
+        <li><span class="dot"></span>Scan OWASP Top 10</li>
+        <li><span class="dot"></span>Détection CVE en temps réel</li>
+        <li><span class="dot"></span>Rapport de pentest automatisé</li>
+        <li><span class="dot"></span>Analyse des headers HTTP &amp; TLS</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Demander l'accès anticipé</h2>
+
+      <form id="registerForm">
+        <div class="field">
+          <label for="name">Nom complet <span class="required">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Adresse e-mail <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required />
+        </div>
+
+        <div class="field">
+          <label for="phone">Numéro de téléphone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78" />
+        </div>
+
+        <div class="field">
+          <label for="message">Un message pour nous ?</label>
+          <textarea id="message" name="message" rows="3" placeholder="Ex : je cherche à auditer une app web, tester mes APIs, scanner mon infrastructure…"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">
+          <span id="btnText">Me prévenir au lancement</span>
+          <span id="btnSpinner" class="spinner hidden" aria-hidden="true"></span>
+        </button>
+
+        <div id="feedback" class="feedback hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

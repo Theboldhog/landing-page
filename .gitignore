@@ -1,0 +1,5 @@
+node_modules/
+registrations.json
+.env
+.env.local
+*.log
